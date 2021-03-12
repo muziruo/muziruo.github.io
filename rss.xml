@@ -2,7 +2,12 @@
 <rss version="2.0">
     <channel>
         <title>Hexo</title>
+        <subtitle></subtitle>
+        <icon>http://example.com/images/favicon.ico</icon>
         <link>http://example.com</link>
+        <author>
+          <name>John Doe</name>
+        </author>
         <description></description>
         <language>en</language>
         <pubDate>Thu, 11 Mar 2021 17:43:34 +0800</pubDate>
