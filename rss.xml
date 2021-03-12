@@ -10,8 +10,40 @@
         </author>
         <description></description>
         <language>en</language>
-        <pubDate>Thu, 11 Mar 2021 17:43:34 +0800</pubDate>
-        <lastBuildDate>Thu, 11 Mar 2021 17:43:34 +0800</lastBuildDate>
+        <pubDate>Fri, 12 Mar 2021 14:16:47 +0800</pubDate>
+        <lastBuildDate>Fri, 12 Mar 2021 14:16:47 +0800</lastBuildDate>
+        <item>
+            <guid isPermalink="true">http://example.com/2021/03/12/iOS%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%8E%A7%E5%88%B6/</guid>
+            <title>iOS多线程数据安全控制</title>
+            <link>http://example.com/2021/03/12/iOS%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%8E%A7%E5%88%B6/</link>
+            <pubDate>Fri, 12 Mar 2021 14:16:47 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;在项目工程中我们难免遇到多线程数据读写的操作，很多时候多线程读写数据需要满足多读单写的要求，我们在开发过程中可以通过使用读写锁 —— &lt;strong&gt;pthread_rwlock_t&lt;/strong&gt; 来进行实现。&lt;/p&gt;
+&lt;h4 id=&#34;引入所需要的头文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#引入所需要的头文件&#34;&gt;#&lt;/a&gt; 引入所需要的头文件&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-objective-c&#34;&gt;#import &amp;lt;pthread.h&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;初始化读写锁对象&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#初始化读写锁对象&#34;&gt;#&lt;/a&gt; 初始化读写锁对象&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-objective-c&#34;&gt;pthread_rwlock_init(&amp;amp;_testLock, NULL);//初始化读写锁testLock
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;读取操作加锁与解锁&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#读取操作加锁与解锁&#34;&gt;#&lt;/a&gt; 读取操作加锁与解锁&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-objective-c&#34;&gt;- (void)read &amp;#123;
+ 	pthread_rwlock_rdlock(&amp;amp;_testLock);//加锁
+ 	NSLog(@&amp;quot;读取&amp;quot;);
+ 	pthread_rwlock_unlock(&amp;amp;_testLock);//解锁
+&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;写入操作的加锁与解锁&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#写入操作的加锁与解锁&#34;&gt;#&lt;/a&gt; 写入操作的加锁与解锁&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-objective-c&#34;&gt;- (void)write &amp;#123;
+	pthread_rwlock_wrlock(&amp;amp;_testLock);//加锁
+ 	for (int i = 0; i &amp;lt; 3; i++) &amp;#123;
+ 		NSLog(@&amp;quot;写入%d&amp;quot;,i);
+ 		sleep(1);
+	&amp;#125;
+	pthread_rwlock_unlock(&amp;amp;_testLock);//解锁
+&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;经过以上的操作后就可以实现多读单写，多个线程可以同时读取，但是一个时间之内只有一个线程能够写入。&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2021/03/11/%E5%88%9D%E6%AC%A1%E8%A7%81%E9%9D%A2/</guid>
             <title>初次见面</title>
