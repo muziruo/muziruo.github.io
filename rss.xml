@@ -10,8 +10,23 @@
         </author>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Fri, 12 Mar 2021 16:04:12 +0800</pubDate>
-        <lastBuildDate>Fri, 12 Mar 2021 16:04:12 +0800</lastBuildDate>
+        <pubDate>Mon, 15 Mar 2021 17:15:49 +0800</pubDate>
+        <lastBuildDate>Mon, 15 Mar 2021 17:15:49 +0800</lastBuildDate>
+        <item>
+            <guid isPermalink="true">http://example.com/2021/03/15/Runtime%E7%AE%80%E4%BB%8B/</guid>
+            <title>Runtime简介</title>
+            <link>http://example.com/2021/03/15/Runtime%E7%AE%80%E4%BB%8B/</link>
+            <pubDate>Mon, 15 Mar 2021 17:15:49 +0800</pubDate>
+            <description><![CDATA[ &lt;h3 id=&#34;runtime简介&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#runtime简介&#34;&gt;#&lt;/a&gt; Runtime 简介&lt;/h3&gt;
+&lt;p&gt;每个 iOS 程序员应该都或多或少听过 Runtime 这个词，Runtime 是 iOS 应用的运行的核心机制，我们所用到的类、库，以及方法调用都和 Runtime 相关。&lt;/p&gt;
+&lt;h4 id=&#34;runtime基础属性&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#runtime基础属性&#34;&gt;#&lt;/a&gt; Runtime 基础属性&lt;/h4&gt;
+&lt;figure class=&#34;highlight objc&#34;&gt;&lt;figcaption data-lang=&#34;objc&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;struct&lt;/span&gt; objc_method &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;Method&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;方法结构体，用于描述类中的方法。其中包括方法名、方法类型以及指向方法实现的指针 IMP 。&lt;/p&gt;
+&lt;figure class=&#34;highlight objc&#34;&gt;&lt;figcaption data-lang=&#34;objc&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;struct&lt;/span&gt; objc_ivar &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;Ivar&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;实例变量结构体，用于描述类的实例变量。包含变量名、变量类型、 Ivar 偏移量。&lt;/p&gt;
+&lt;figure class=&#34;highlight objc&#34;&gt;&lt;figcaption data-lang=&#34;objc&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;struct&lt;/span&gt; objc_category &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;Category&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;表示该类的分类。其中包含分类名，分类类型、实例方法列表、类方法列表以及协议列表。&lt;/p&gt;
+&lt;figure class=&#34;highlight objc&#34;&gt;&lt;figcaption data-lang=&#34;objc&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;struct&lt;/span&gt; objc_property &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;objc_property_t&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;表示类中的属性。&lt;/p&gt;
+&lt;p&gt;未完待续。&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2021/03/12/iOS-Method-Swizzling%E7%AE%80%E4%BB%8B/</guid>
             <title>iOS Method Swizzling简介</title>
