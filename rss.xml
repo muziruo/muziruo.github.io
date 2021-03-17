@@ -23,12 +23,12 @@
 &lt;p&gt;&lt;img data-src=&#34;https://i.loli.net/2021/03/17/zhi2JMAgvQXZadH.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;这是具体信息，大致的错误信息格式是  &lt;code&gt;Undefined symbols for architecture armv7:   &amp;quot;XXXA&amp;quot;, referenced from:       objc-class-ref in XXXB.o ld: symbol(s) not found for architecture armv7&lt;/code&gt;  。&lt;/p&gt;
 &lt;h3 id=&#34;排查&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#排查&#34;&gt;#&lt;/a&gt; 排查&lt;/h3&gt;
-&lt;p&gt;第一眼看到这个错误，想到的是 XXXA 文件是不是没有添加到 Complie Sources 中，检查了一下，正常。然后再次检查对应的 SDK 是否在 Link   Binary With Libraries 中，检查了一下，正常。然后又怀疑 SDK 打包的一些配置文件是否有问题 (其实这里已经想到点上了，但是无奈 SDK 方检查了配置文件，说没有问题，我也就没有继续深究了，毕竟平时也没人经常改这个)。然后又怀疑是否是 XXXA 的引用又问题，删除了文件重新引入，发现还是不行。&lt;/p&gt;
-&lt;p&gt;无奈之后问了一下 SDK 最新的改造情况，说是引入了一个新的三方库，但是主工程中已经有了，所以应该没事儿。网上能找到的修改方案也都用了，问题依旧无法解决。&lt;/p&gt;
+&lt;p&gt;第一眼看到这个错误，想到的是 XXXA 文件是不是没有添加到 Complie Sources 中，检查了一下，正常。然后再次检查对应的 SDK 是否在 Link   Binary With Libraries 中，检查了一下，正常。然后又怀疑 SDK 打包的一些配置文件是否有问题 (其实这里已经想到点上了，但是无奈 SDK 方检查了配置文件，说没有问题，我也就没有继续深究了，毕竟平时也没人经常改这个)。然后又怀疑是否是 XXXA 的引用有问题，删除了文件重新引入，发现还是不行。&lt;/p&gt;
+&lt;p&gt;无奈之下问了一下 SDK 最新的改造情况，说是需要引入了一个新的三方库，但是主工程中已经有了，所以应该没事儿。网上能找到的修改方案也都用了，问题依旧无法解决。&lt;/p&gt;
 &lt;p&gt;最后问题还是回到了架构这一块，报错信息中的大致意思是不支持 armv7 ，就寻来了一个看 SDK 支持架构的语句，也正是这个语句直接定位了问题，如下：&lt;/p&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;lipo -info XXX.a&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;其中的 XXX.a 即为 SDK 的路径。一查发现仅支持 arm64，我又查了上一版 SDK，支持 arm64、armv7、armv7s。破案了！我直接拿着这个实锤找 SDK 方，SDK 方也从此入手，解决问题。&lt;/p&gt;
 &lt;h3 id=&#34;后记&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#后记&#34;&gt;#&lt;/a&gt; 后记&lt;/h3&gt;
-&lt;p&gt;这个问题他也不算疑难，可是往往有人忽略了，而且无法拿出具体的问题证据，也导致没法找准问题点切入，就一直处于瞎猫碰死耗子的状态。网上也有关于此类问题的解决方案，各有不同，所以还是得多试试，总能找到解决的办法。&lt;/p&gt;
+&lt;p&gt;这个问题他也不算疑难，可是往往容易忽略了，而且无法拿出具体的问题证据，也导致没法找准问题点切入，就一直处于瞎猫碰死耗子的状态。网上也有关于此类问题的解决方案，各有不同，所以还是得多试试，总能找到解决的办法。&lt;/p&gt;
  ]]></description>
         </item>
         <item>
