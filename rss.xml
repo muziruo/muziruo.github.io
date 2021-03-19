@@ -10,8 +10,60 @@
         </author>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Wed, 17 Mar 2021 16:16:31 +0800</pubDate>
-        <lastBuildDate>Wed, 17 Mar 2021 16:16:31 +0800</lastBuildDate>
+        <pubDate>Fri, 19 Mar 2021 13:48:11 +0800</pubDate>
+        <lastBuildDate>Fri, 19 Mar 2021 13:48:11 +0800</lastBuildDate>
+        <item>
+            <guid isPermalink="true">http://example.com/2021/03/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</guid>
+            <title>计算机网络</title>
+            <link>http://example.com/2021/03/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
+            <pubDate>Fri, 19 Mar 2021 13:48:11 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;计算机网络&lt;/strong&gt;是由若干&lt;strong&gt;结点&lt;/strong&gt;以及连接这些结点的&lt;strong&gt;链路&lt;/strong&gt;组成，其中结点可以是计算机、集线器、交换机以及路由器等。&lt;/p&gt;
+&lt;h4 id=&#34;互联网&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#互联网&#34;&gt;#&lt;/a&gt; 互联网&lt;/h4&gt;
+&lt;p&gt;互联网发展三个阶段：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;ARPANET，美国军方创造的第一个分组交换网。&lt;/li&gt;
+&lt;li&gt;NSFNET，国家科学基金网，是一个三级计算机网络，分为主干网、地区网以及企业网。&lt;/li&gt;
+&lt;li&gt;开始形成多层次的 ISP 结构的互联网，ISP 即互联网服务提供商。一般来说层级有主干 ISP、地区 ISP、本地 ISP 最后到校园网 (企业网) 或者是主机。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;互联网的两大结构：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;边缘部分&lt;/strong&gt;；由所有连接在互联网上的主机组成。这部分是用户直接使用的，用来进行通信和资源共享。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;核心部分&lt;/strong&gt;：由大量网络和连接这些网络的路由器组成，这部分是为边缘部分提供服务的 (提供了连通性和交换)。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;三种交换方式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#三种交换方式&#34;&gt;#&lt;/a&gt; 三种交换方式&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;电路交换；整个报文的比特流从源头直接到终点，类似于在管道中传送。&lt;/li&gt;
+&lt;li&gt;报文交换；整个报文先传送到相邻结点，全部存储下来后查找转发表，转发到下一个结点。&lt;/li&gt;
+&lt;li&gt;分组交换；单个分组传送到相邻结点，存储下来后查找转发表，转发到下一结点。与报文交换类似，但是不同的点在于分组通常是报文的一部分，可以看作是把报文进行了切割。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.loli.net/2021/03/19/P5Nj7kYQFhEqeUA.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;h4 id=&#34;计算机网络的性能指标&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#计算机网络的性能指标&#34;&gt;#&lt;/a&gt; 计算机网络的性能指标&lt;/h4&gt;
+&lt;h5 id=&#34;速率&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#速率&#34;&gt;#&lt;/a&gt; 速率&lt;/h5&gt;
+&lt;p&gt;也称为数据率，表示每秒传输的二进制信息量。&lt;/p&gt;
+&lt;h5 id=&#34;带宽&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#带宽&#34;&gt;#&lt;/a&gt; 带宽&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;传统意义上带宽是表示信号所具有频率宽度，一般是 XX HZ～XX HZ，以赫兹 (HZ) 为单位&lt;/li&gt;
+&lt;li&gt;在计算机网络中的带宽，表示在单位时间内网络中的某信道所能通过的最高数据率，和数据率的单位一致。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;吞吐量&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#吞吐量&#34;&gt;#&lt;/a&gt; 吞吐量&lt;/h5&gt;
+&lt;p&gt;表示单位时间内通过某个网络的实际数据量。&lt;/p&gt;
+&lt;h5 id=&#34;时延&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#时延&#34;&gt;#&lt;/a&gt; 时延&lt;/h5&gt;
+&lt;p&gt;指数据从网络的一端到另一端所需要的时间。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;发送时延；发送时延是主机或路由器发送数据帧所需要的时间，也就是从发送数据帧的第一个 bit 算起，到发送完最后一个 bit 的时间，计算公式为 &lt;strong&gt;发送时延 = 数据帧长度（bit）/ 发送速率 （bit/s）&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;传播时延；电磁波在信道中传播一定的距离所需要花费的时间。计算公式为 &lt;strong&gt;传播时延 = 信道长度 / 电磁波在信道上传播的速率&lt;/strong&gt; 。&lt;/li&gt;
+&lt;li&gt;处理时延；主机或路由器在收到分组后是需要花费一定的时间进行处理转发的。这部分时间就是处理时延。&lt;/li&gt;
+&lt;li&gt;排队时延；分组在经过网络传输的时候，是需要经过很多路由器的，但分组在进入路由器后并不是就能立即处理转发出去，而是需要在输入队列中进行排队等待处理，这部分时间就是排队时延。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;总时延 = 以上几个时延加起来的总和。&lt;/p&gt;
+&lt;h5 id=&#34;时延带宽积&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#时延带宽积&#34;&gt;#&lt;/a&gt; 时延带宽积&lt;/h5&gt;
+&lt;p&gt;传播时延与带宽的乘积即为时延带宽积。表示填满整个传输管道需要的比特数。&lt;/p&gt;
+&lt;h5 id=&#34;往返时间rtt&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#往返时间rtt&#34;&gt;#&lt;/a&gt; 往返时间 RTT&lt;/h5&gt;
+&lt;p&gt;数据发送完毕后到接受到另一端的确认信息所需要的时间。在计算有效数据率的时候，我们需要在发送时间的基础上加上 RTT 时间。公式为 &lt;strong&gt;有效数据率 = 数据长度 / （发送时间 + RTT）&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;未完待续。&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2021/03/17/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%AF%B9%E6%8E%A5SDK%E7%9A%84%E5%A5%87%E5%A6%99%E9%94%99%E8%AF%AF%E7%BB%8F%E5%8E%86/</guid>
             <title>记一次对接SDK的奇妙错误经历</title>
