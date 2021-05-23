@@ -8,14 +8,28 @@
     <author>
       <name>ease LEE</name>
     </author>
-    <updated>2021-03-19T05:48:11.000Z</updated>
+    <updated>2021-05-23T05:53:09.000Z</updated>
+    <entry>
+        <id>http://example.com/2021/05/23/iOS%E9%80%9A%E7%9F%A5%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</id>
+        <title>iOS通知的一些注意事项</title>
+        <link rel="alternate" href="http://example.com/2021/05/23/iOS%E9%80%9A%E7%9F%A5%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/"/>
+        <content type="html">&lt;h1 id=&#34;关于通知的一些注意事项&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#关于通知的一些注意事项&#34;&gt;#&lt;/a&gt; 关于通知的一些注意事项&lt;/h1&gt;
+&lt;p&gt;在此记录几点关于通知的细节，以便更好的使用和排查问题。&lt;/p&gt;
+&lt;h2 id=&#34;通知的线程&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#通知的线程&#34;&gt;#&lt;/a&gt; 通知的线程&lt;/h2&gt;
+&lt;p&gt;之前在项目中对接 SDK，其中就使用了通知来控制 UI 的改变，也遇到了一些问题，在通知发送并且接收到之后 UI 并没有进行相应的更新，看了一下报错提示，说是在非主线程中更新了 UI，由此查了一下资料发现通知也会有线程之分。&lt;/p&gt;
+&lt;p&gt;官方给出的解释是，通知接收的线程和发送的线程是一致的，而不是与注册线程一致。所以我们在使用通知的时候，要注意实际操作执行的线程问题。&lt;/p&gt;
+&lt;h2 id=&#34;通知的多重注册问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#通知的多重注册问题&#34;&gt;#&lt;/a&gt; 通知的多重注册问题&lt;/h2&gt;
+&lt;p&gt;在对象里注册通知之后要注意进行释放，不然会出现多次监听的情况。&lt;/p&gt;
+</content>
+        <updated>2021-05-23T05:53:09.000Z</updated>
+    </entry>
     <entry>
         <id>http://example.com/2021/03/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</id>
         <title>计算机网络</title>
         <link rel="alternate" href="http://example.com/2021/03/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-        <content type="html">&lt;h2 id=&#34;概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
+        <content type="html">&lt;h1 id=&#34;概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述&#34;&gt;#&lt;/a&gt; 概述&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;计算机网络&lt;/strong&gt;是由若干&lt;strong&gt;结点&lt;/strong&gt;以及连接这些结点的&lt;strong&gt;链路&lt;/strong&gt;组成，其中结点可以是计算机、集线器、交换机以及路由器等。&lt;/p&gt;
-&lt;h4 id=&#34;互联网&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#互联网&#34;&gt;#&lt;/a&gt; 互联网&lt;/h4&gt;
+&lt;h3 id=&#34;互联网&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#互联网&#34;&gt;#&lt;/a&gt; 互联网&lt;/h3&gt;
 &lt;p&gt;互联网发展三个阶段：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;ARPANET，美国军方创造的第一个分组交换网。&lt;/li&gt;
@@ -27,14 +41,14 @@
 &lt;li&gt;&lt;strong&gt;边缘部分&lt;/strong&gt;；由所有连接在互联网上的主机组成。这部分是用户直接使用的，用来进行通信和资源共享。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;核心部分&lt;/strong&gt;：由大量网络和连接这些网络的路由器组成，这部分是为边缘部分提供服务的 (提供了连通性和交换)。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 id=&#34;三种交换方式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#三种交换方式&#34;&gt;#&lt;/a&gt; 三种交换方式&lt;/h4&gt;
+&lt;h3 id=&#34;三种交换方式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#三种交换方式&#34;&gt;#&lt;/a&gt; 三种交换方式&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;电路交换；整个报文的比特流从源头直接到终点，类似于在管道中传送。&lt;/li&gt;
 &lt;li&gt;报文交换；整个报文先传送到相邻结点，全部存储下来后查找转发表，转发到下一个结点。&lt;/li&gt;
 &lt;li&gt;分组交换；单个分组传送到相邻结点，存储下来后查找转发表，转发到下一结点。与报文交换类似，但是不同的点在于分组通常是报文的一部分，可以看作是把报文进行了切割。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://i.loli.net/2021/03/19/P5Nj7kYQFhEqeUA.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;h4 id=&#34;计算机网络的性能指标&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#计算机网络的性能指标&#34;&gt;#&lt;/a&gt; 计算机网络的性能指标&lt;/h4&gt;
+&lt;h3 id=&#34;计算机网络的性能指标&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#计算机网络的性能指标&#34;&gt;#&lt;/a&gt; 计算机网络的性能指标&lt;/h3&gt;
 &lt;h5 id=&#34;速率&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#速率&#34;&gt;#&lt;/a&gt; 速率&lt;/h5&gt;
 &lt;p&gt;也称为数据率，表示每秒传输的二进制信息量。&lt;/p&gt;
 &lt;h5 id=&#34;带宽&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#带宽&#34;&gt;#&lt;/a&gt; 带宽&lt;/h5&gt;
@@ -57,6 +71,45 @@
 &lt;p&gt;传播时延与带宽的乘积即为时延带宽积。表示填满整个传输管道需要的比特数。&lt;/p&gt;
 &lt;h5 id=&#34;往返时间rtt&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#往返时间rtt&#34;&gt;#&lt;/a&gt; 往返时间 RTT&lt;/h5&gt;
 &lt;p&gt;数据发送完毕后到接受到另一端的确认信息所需要的时间。在计算有效数据率的时候，我们需要在发送时间的基础上加上 RTT 时间。公式为 &lt;strong&gt;有效数据率 = 数据长度 / （发送时间 + RTT）&lt;/strong&gt;。&lt;/p&gt;
+&lt;h5 id=&#34;利用率&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#利用率&#34;&gt;#&lt;/a&gt; 利用率&lt;/h5&gt;
+&lt;p&gt;分为信道利用率和网络利用率两种。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;信道利用率&lt;/strong&gt;指某信道有百分之几的时间是被利用的。信道利用率并非越高越好，信道利用率增加的时候，信道时延也会相应增加。一般主干网络的信道利用率保持在 50% 左右，如果更大则需要考虑扩容。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;网络利用率&lt;/strong&gt;则是全网络的信道利用率的加权平均值。&lt;/p&gt;
+&lt;h3 id=&#34;计算机网络的非性能特征&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#计算机网络的非性能特征&#34;&gt;#&lt;/a&gt; 计算机网络的非性能特征&lt;/h3&gt;
+&lt;p&gt;费用、质量、标准化、可靠性、可扩展性和可升级性、易于管理和维护&lt;/p&gt;
+&lt;h3 id=&#34;计算机网络体系结构&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#计算机网络体系结构&#34;&gt;#&lt;/a&gt; 计算机网络体系结构&lt;/h3&gt;
+&lt;p&gt;计算机网络的各层及其协议的集合就是网络的体系结构。&lt;/p&gt;
+&lt;h4 id=&#34;协议与划分层次&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#协议与划分层次&#34;&gt;#&lt;/a&gt; 协议与划分层次&lt;/h4&gt;
+&lt;h5 id=&#34;分层的好处&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#分层的好处&#34;&gt;#&lt;/a&gt; 分层的好处&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;各层之间是独立的。不同层之间不需要互相知道其他层的实现，只需要调用其他层提供的接口即可。&lt;/li&gt;
+&lt;li&gt;灵活性好。&lt;/li&gt;
+&lt;li&gt;结构上可分割开。&lt;/li&gt;
+&lt;li&gt;易于实现和维护。&lt;/li&gt;
+&lt;li&gt;能促进标准化工作。一般来说每层所需要考虑的问题有：差错控制、流量控制、分段与重装、复用和分用以及连接建立与释放。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;计算机网路体系五层结构&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#计算机网路体系五层结构&#34;&gt;#&lt;/a&gt; 计算机网路体系五层结构&lt;/h4&gt;
+&lt;h5 id=&#34;应用层&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#应用层&#34;&gt;#&lt;/a&gt; 应用层&lt;/h5&gt;
+&lt;p&gt;交互的数据单元称作为报文。&lt;/p&gt;
+&lt;h5 id=&#34;运输层&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#运输层&#34;&gt;#&lt;/a&gt; 运输层&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;TCP
+&lt;ul&gt;
+&lt;li&gt;面向连接的、可靠的数据传输服务。数据传输的单位是报文段。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;UDP
+&lt;ul&gt;
+&lt;li&gt;无连接的，尽最大努力的数据传输服务，不保证数据传输的可靠性，传输单位是用户数据报。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;网络层&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#网络层&#34;&gt;#&lt;/a&gt; 网络层&lt;/h5&gt;
+&lt;p&gt;将运输层的报文段或者用户数据报封装成分组或者包进行传送。&lt;/p&gt;
+&lt;h5 id=&#34;数据链路层&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据链路层&#34;&gt;#&lt;/a&gt; 数据链路层&lt;/h5&gt;
+&lt;p&gt;传输数据单位为帧。每一帧包括数据和必要的控制信息 (如同步信息、地址信息、差错控制等)&lt;/p&gt;
+&lt;h5 id=&#34;物理层&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#物理层&#34;&gt;#&lt;/a&gt; 物理层&lt;/h5&gt;
+&lt;p&gt;传输数据单位为比特。&lt;/p&gt;
 &lt;p&gt;未完待续。&lt;/p&gt;
 </content>
         <updated>2021-03-19T05:48:11.000Z</updated>
